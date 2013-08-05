@@ -1,6 +1,6 @@
 // Raymond:
-//   1. Minimum code for creating window, with message map feature.
-//   2. Can fill message map with 'Properties Window' help (Visual Studio needs some seconds to refresh wizard) 
+//   1. Minimum window creating code, ATL windowing, with message map feature.
+//   2. Can auto fill message map with 'Properties Window' help (Visual Studio needs some seconds to refresh wizard) 
 //   
 
 #include <atlbase.h>
@@ -64,7 +64,8 @@ LRESULT MainWindow::OnPaint(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/,
 
 LRESULT MainWindow::OnDestroy(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 {
-	PostMessage(WM_QUIT);
+	//PostMessage(WM_QUIT);
+	PostQuitMessage(0);
 	return 0;
 }
 
