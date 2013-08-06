@@ -4,6 +4,9 @@
 //  2. For readability, clean error detection code
 //	3. Smart COM pointer, personal hobby & cleaner code
 //  4. Select camera if more than one
+//
+// DirectShow Samples http://msdn.microsoft.com/en-us/library/windows/desktop/dd375468(v=vs.85).aspx
+//
 
 #include <atlcomcli.h>
 #include <atlcoll.h>
