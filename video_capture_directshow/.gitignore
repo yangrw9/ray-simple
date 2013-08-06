@@ -1,0 +1,34 @@
+
+*.ncb
+*.sdf
+*.opensdf
+
+*.user
+*.suo
+
+*.aps
+*.pch
+*.ilk
+ipch
+
+Debug
+Release
+*.pdb
+#*.lib
+
+
+*_i.c
+*_i.h
+*_p.c
+dlldata.c
+
+# Ignore if do not share one logical view of project.
+#*.filters
+
+# Ignore Visual Stuido project file upgrade report
+/_UpgradeReport_Files
+/UpgradeLog.htm
+/UpgradeLog.XML
+
+# Visual Stuido file type notes
+## *.vcproj	Visual C++ project file when Visual Stuido <= 2008
