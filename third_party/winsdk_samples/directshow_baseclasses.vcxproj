@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4850B358-4720-8F5E-A394-437229B63082}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>directshow_baseclasses</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Locals">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\.\bin\;$(MSBuildProjectDirectory)\.\bin\</ExecutablePath>
+    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetPath>$(OutDir)lib\$(ProjectName)$(TargetExt)</TargetPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>src\Samples\multimedia\directshow\baseclasses;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib\$(ProjectName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies></AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>src\Samples\multimedia\directshow\baseclasses;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>src\Samples\multimedia\directshow\baseclasses;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)lib\$(ProjectName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Link>
+      <AdditionalDependencies></AdditionalDependencies>
+    </Link>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>src\Samples\multimedia\directshow\baseclasses;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="winsdk_samples.gyp"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxlist.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\fourcc.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\transip.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\pullpin.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxutil.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\ddmm.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxdebug.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\sysclock.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\msgthrd.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\refclock.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\vtrans.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\seekpt.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\pstream.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\winctrl.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\cache.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\combase.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\amfilter.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\streams.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\mtype.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\winutil.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\ctlutil.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\cprop.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\renbase.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\transfrm.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\videoctl.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\strmctl.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\measure.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\outputq.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\reftime.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\amextra.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\source.h"/>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\dllsetup.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\refclock.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\transip.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\pstream.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amvideo.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\dllentry.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\combase.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\ddmm.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\sysclock.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\cprop.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\schedule.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\transfrm.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxlist.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\winctrl.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\outputq.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\vtrans.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amextra.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\strmctl.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amfilter.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\mtype.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\dllsetup.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\renbase.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxdebug.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\pullpin.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\seekpt.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\videoctl.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\winutil.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\source.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxutil.cpp"/>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\ctlutil.cpp"/>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>

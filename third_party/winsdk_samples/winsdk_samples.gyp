@@ -11,6 +11,22 @@
     {
       'target_name': 'directshow_baseclasses',
       'type': 'static_library',
+
+      # Let generated file matching Visual Stuido default config
+      'configurations': {
+        'Debug': {
+          'defines': [
+            'DEBUG',
+          ],
+        },
+        'Release': {
+          'defines!': [
+            'DEBUG',
+          ],
+        },
+      },
+      
+      
       'variables': {
         'baseclasses_dir%':
           'src/Samples/multimedia/directshow/baseclasses',
