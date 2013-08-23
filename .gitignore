@@ -11,3 +11,35 @@
 *.lai
 *.la
 *.a
+
+
+# <Visual Studio Fiels>
+*.ncb
+*.sdf
+*.opensdf
+
+*.user
+*.suo
+
+*.aps
+*.pch
+*.ilk
+ipch
+
+Debug
+Release
+#*.pdb
+#*.lib
+
+# ATL IDL generated files
+#*_i.c
+#*_i.h
+#*_p.c
+#dlldata.c
+
+# Ignore if do not share one logical view of project.
+#*.filters
+
+
+# </Visual Studio Fiels>
+
