@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <windowsx.h>   // Introduction to STRICT and Message Crackers http://support.microsoft.com/kb/83456
+//#include <windowsx.h>   // Introduction to STRICT and Message Crackers http://support.microsoft.com/kb/83456
 
 LRESULT CALLBACK WindowProc(_In_ HWND hwnd, _In_ UINT uMsg, _In_ WPARAM wParam, _In_ LPARAM lParam);
 
@@ -56,9 +56,11 @@ LRESULT CALLBACK WindowProc(_In_ HWND hwnd, _In_ UINT uMsg, _In_ WPARAM wParam, 
     switch (uMsg)
     {
     //case WM_PAINT:
-    //    HANDLE_WM_PAINT(hwnd, wParam, lParam);
-    HANDLE_MSG(hwnd, WM_PAINT, Cls_OnPaint);
-
+    //    HANDLE_WM_PAINT(hwnd, wParam, lParam);    // style 1 with <windowsx.h>
+    //HANDLE_MSG(hwnd, WM_PAINT, Cls_OnPaint);      // style 2 with <windowsx.h>
+    case WM_PAINT:
+        Cls_OnPaint(hwnd);
+        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
