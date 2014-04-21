@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleTcpClient", "SimpleTcpClient\SimpleTcpClient.vcxproj", "{4410E36A-C549-441D-84D7-A524A1C94D5A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleTcpServer", "SimpleTcpServer\SimpleTcpServer.vcxproj", "{A4758A0C-8B97-4148-B0B3-991A11FB3453}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4410E36A-C549-441D-84D7-A524A1C94D5A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4410E36A-C549-441D-84D7-A524A1C94D5A}.Debug|Win32.Build.0 = Debug|Win32
+		{4410E36A-C549-441D-84D7-A524A1C94D5A}.Release|Win32.ActiveCfg = Release|Win32
+		{4410E36A-C549-441D-84D7-A524A1C94D5A}.Release|Win32.Build.0 = Release|Win32
+		{A4758A0C-8B97-4148-B0B3-991A11FB3453}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4758A0C-8B97-4148-B0B3-991A11FB3453}.Debug|Win32.Build.0 = Debug|Win32
+		{A4758A0C-8B97-4148-B0B3-991A11FB3453}.Release|Win32.ActiveCfg = Release|Win32
+		{A4758A0C-8B97-4148-B0B3-991A11FB3453}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
