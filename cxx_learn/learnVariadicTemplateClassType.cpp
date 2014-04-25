@@ -20,6 +20,18 @@ class TinyFixMap<T, current>
   }
 };
 
+// 一般式，对 N 成立(之形式)
+template <char ...>
+size_t find_index(char);
+
+// 特殊式，对 1 成立
+template <>
+site_t find_index<char current>(char c)
+{
+  
+}
+
+
 template <char current>
 size_t get_index(char c) {
   return c == curent ? 0 : -1;
