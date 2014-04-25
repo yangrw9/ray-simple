@@ -4,13 +4,92 @@
 #include <algorithm>
 #include <initializer_list>
 #include <stdexcept>
+#include <utility>
 
 // http://thenewcpp.wordpress.com/2011/11/23/variadic-templates-part-1-2/
 
+////////////////////////////////////////////////////////////////////
+// 
+template<char ...>
+struct find_index_t;
 
-template <typename T, char current, char ... others>  // forward declare
-class TinyFixMap;
+template<char current>
+struct find_index_t<current> {
+  size_t operator()(char c) {
+    return c == current ? 0 : -1;
+  }
+};
 
+template<char current, char...others>
+struct find_index_t<current, others...>
+{
+//  static const int result = 
+//        c == current ? sizeof...(others)
+//        : (sizeof...(others) > 0 
+//           ? find_index_t<others...>::result 
+//           : -1);
+  size_t operator()(char c) {
+     return c == current ? sizeof...(others) : find_index_t<others...>()(c);  
+  }
+};
+//
+//////////////////////////////////////////////////////////////////
+
+template <typename T, char current, char ... others>
+class TinyFixMap
+{
+  T values[sizeof...(others) + 1] = {};
+
+public:
+  T& operator[](char c) {
+    int i = find_index_t<current, others...>()(c);
+    if ( i != -1)  {
+       return values[i];
+    } 
+    else {
+       std::string str("Not a valid index ");
+       throw std::out_of_range(str + c);
+    }
+  }
+};
+
+
+
+int main()
+{
+
+  TinyFixMap<double, 'a', 'b', 'c'> var;
+  var['a'] = 10.2;
+  var['b'] = 13;
+  using namespace std;
+
+  cout << "var['a'] = " << var['a'] << endl;
+  cout << "var['b'] = " << var['b'] << endl;
+  cout << "var['c'] = " << var['c'] << endl;
+  cout << "var['d'] = " << var['d'] << endl;
+
+}
+
+//template <typename T, char current, char ... others>  // forward declare
+//class TinyFixMap;
+
+
+#if 0
+/////////////////////////////////////////////////////////////////////////
+// function overload
+template <char current>
+size_t get_index(char c) {
+  return c == current ? 0 : -1;
+}
+template <char current, char ... others>
+size_t get_index(char c) {
+
+  return c == current ? sizeof ... (others) : get_index<others...>(c);
+}
+#endif 
+
+/////////////////////////////////////////////////////////////////////////
+/*
 template <typename T, char current>
 class TinyFixMap<T, current>
 {
@@ -19,47 +98,46 @@ class TinyFixMap<T, current>
     return c == current ? 0 : -1;
   }
 };
+*/
 
+#if 0
+//////////////////////////////////////////////////////////////////////////
+// function template specialize (not function overload)
+//
 // 一般式，对 N 成立(之形式)
-template <char ...>
-size_t find_index(char);
+//template <char ... T>
+//size_t find_index(char);
 
 // 特殊式，对 1 成立
-template <>
-site_t find_index<char current>(char c)
+//template <char current>
+//size_t find_index(char c)
+//{
+  //return c == current ? 0 : -1;
+//  return -1;
+//}
+
+// Expaned for N + 1
+template <char current, char... others>
+size_t find_index (char c)
 {
-  
+  size_t index = sizeof...(others);
+  if (index == 0) {
+   return c == current ? index : -1;
+ }
+ // else if (index == 1) {
+ // }
+  else {
+    return find_index<others...>(c);
+  }
+//  return c == current ? index : find_index<others...>(c);//(index == 0 ? -1 : find_index<others...>(c));
 }
-
-
-template <char current>
-size_t get_index(char c) {
-  return c == curent ? 0 : -1;
-}
-template <char current, char ... par>
-size_t get_index(char c) {
-  return c == current ? sizeof ... (par) : get_index<par>(c);
-}
-
-template <typename T, char current, char ... others> // actual declare
-class TinyFixMap
-{
+#endif
+//
+/////////////////////////////////////////////////////////////////////////
   //typedef typename TinyFixMap<T, others...> next;
-  T val[sizeof...(others) + 1];
+
 //  int as_index(char c) {
    // return c == current ? 0 : nt::as_index(c);
-
-public:
-  T& operator[](char c) {
-    int i = get_index<current, others>(c);
-    if ( i != -1)  {
-       return vals[i];
-    } 
-    else {
-       throw std::out_of_range("Not a valid index");
-    }
-  }
-};
 
 
  //: TinyFixMap<T, others...>
@@ -165,21 +243,5 @@ public:
   }
 };
 #endif
-
-int main()
-{
-#if 0
-  TinyFixMap<double, 'a', 'b', 'c'> var;
-  var['a'] = 10.2;
-  var['b'] = 13;
-  using namespace std;
-
-  cout << "var['a'] = " << var['a'] << endl;
-  cout << "var['b'] = " << var['b'] << endl;
-  cout << "var['c'] = " << var['c'] << endl;
-  cout << "var['d'] = " << var['d'] << endl;
-#endif
-}
-
 
 
