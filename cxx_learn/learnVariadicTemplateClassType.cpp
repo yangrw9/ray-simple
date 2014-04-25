@@ -11,8 +11,8 @@
 template <typename T, char current, char ... others>  // forward declare
 class TinyFixMap;
 
-template <typename T, char index>
-class TinyFixMap<T, index>
+template <typename T, char current>
+class TinyFixMap<T, current>
 {
   T val[1];
   int as_index(char c) {
@@ -20,18 +20,26 @@ class TinyFixMap<T, index>
   }
 };
 
+template <char current>
+size_t get_index(char c) {
+  return c == curent ? 0 : -1;
+}
+template <char current, char ... par>
+size_t get_index(char c) {
+  return c == current ? sizeof ... (par) : get_index<par>(c);
+}
 
 template <typename T, char current, char ... others> // actual declare
 class TinyFixMap
 {
-  typedef typename TinyFixMap<T, others...> next;
+  //typedef typename TinyFixMap<T, others...> next;
   T val[sizeof...(others) + 1];
-  int as_index(char c) {
-    return c == current ? 0 : next::as_index(c);
-  }
+//  int as_index(char c) {
+   // return c == current ? 0 : nt::as_index(c);
+
 public:
   T& operator[](char c) {
-    int i = as_index(c);
+    int i = get_index<current, others>(c);
     if ( i != -1)  {
        return vals[i];
     } 
