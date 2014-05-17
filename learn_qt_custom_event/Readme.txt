@@ -1,7 +1,7 @@
 
 Simple sample to create a custom Qt event (can be safely pass between thread, I think, not test)
 
-(Qt 5.2.1, gcc 2.8.2, x64, Ubuntu 10.04, completed on 2014/5/17)
+(Qt 5.2.1, gcc 4.8.2, x64, Ubuntu 10.04, completed on 2014/5/17)
 
 See "myevent.h" for more. UI code is based on Qt generated Application.
 
