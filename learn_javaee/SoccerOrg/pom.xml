@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.yar9</groupId>
+	<artifactId>SoccerOrg_maven</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>SoccerOrg_maven Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.8</version>
+		</dependency>
+		
+       <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>3.5.3-Final</version>
+        </dependency>
+
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-entitymanager</artifactId>
+		    <version>3.5.3-Final</version>
+		</dependency>
+		
+		<dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>5.1.30</version>
+</dependency>
+		
+<!-- Hibernate library dependecy start -->
+<dependency>
+<groupId>dom4j</groupId>
+<artifactId>dom4j</artifactId>
+<version>1.6.1</version>
+</dependency>
+
+<dependency>
+	<groupId>org.slf4j</groupId>
+	<artifactId>slf4j-log4j12</artifactId>
+	<version>1.5.6</version>
+</dependency>
+
+<dependency>
+<groupId>commons-logging</groupId>
+<artifactId>commons-logging</artifactId>
+<version>1.1.1</version>
+</dependency>
+
+<dependency>
+<groupId>commons-collections</groupId>
+<artifactId>commons-collections</artifactId>
+<version>3.2.1</version>
+</dependency>
+
+<dependency>
+<groupId>cglib</groupId>
+<artifactId>cglib</artifactId>
+<version>2.2</version>
+</dependency>
+<!-- Hibernate library dependecy end -->
+       		
+	</dependencies>
+
+	<repositories>
+		<!-- Last time i checked, the current versions of Jersey were not available 
+			on Mavens central repository. To get them add the following repository to 
+			your pom.xml -->
+		<repository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+		</repository>
+
+	</repositories>
+
+	<build>
+		<finalName>SoccerOrg</finalName>
+	</build>
+</project>
