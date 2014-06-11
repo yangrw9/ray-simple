@@ -58,7 +58,10 @@ struct access_12{
 
 
 // Style-3 (class template, non-type parameter)
-////template<plane_point p>   // not a valid type for a template non-type parameter
+//
+//// http://stackoverflow.com/questions/5687540/non-type-template-parameters
+//// template<plane_point p>   // not a valid type for a template non-type parameter
+//
 //template<plane_point* p>
 //struct plane_point_access{
 //  static double coord1() { return p.coord1;}
@@ -132,6 +135,9 @@ struct default_access<plane_xy>
 //         http://en.wikipedia.org/wiki/Trait_(computer_programming)
 //
 //template<typename T, typename access>  // No way to infer 'access', client code will be tough, no no no...
+//
+// http://stackoverflow.com/questions/2447458/default-template-arguments-for-function-templates
+// It said 'access = ' syntax is since C++11  (really ??)
 template<typename T, typename access = typename default_access<T>::type>  // Style-1 (type deduce)
 double point_distance(const T& point_a, const T& point_b)
 {
@@ -185,6 +191,21 @@ void foo_use_ponit_dist()
   
 }
 
+// Additional Read (maybe help)
+//
+// http://en.wikipedia.org/wiki/Trait_(computer_programming)
+//   a trait represents a collection of methods, that can be used to extend the functionality of a class ...
+//   Traits are somewhat between an interface and a mixin: 
+//     an interface is made only of method signatures, 
+//     while a trait includes also the full method definitions, 
+//     on the other side mixins include method definitions, but the can also carry state through attributes while traits usually don't.
+//
+// http://accu.org/index.php/journals/442
+//   An introduction to C++ Traits
+//
+// http://www.cppblog.com/youxia/archive/2008/08/30/60443.html
+//   理解模板编程中的Trait和Mataprogram
+//
 
 int main()
 {
