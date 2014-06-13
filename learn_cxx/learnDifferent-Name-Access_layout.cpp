@@ -1,41 +1,58 @@
 #include <stdio.h>
-#include <math.h>
 
-struct plane_xy {
+struct coord_xyz {
   double x;
   double y;
+  double z;
 };
 
-struct plane_12 {
+struct coord_123 {
   double coord1;
   double coord2;
+  double coord3;
 };
 
+// Tricky usage: switch base-plane to YZ
+struct coord_yzx {
+  double coord3; // x  
+  double coord1; // y   // 1st in 'yzx' order
+  double coord2; // z   
+};
 
-template<typename T >
-double point_distance(const T& a, const T& b)
+// Over tricky usage: same name, different meaning
+struct coord_zxy {
+  double y; // coord2   // (origin) x    
+  double z; // coord3   // (origin) y    
+  double x; // coord1   // (origin) z   // 1st in (origin) 'zxy' order 
+};
+
+void access_by_different_name()
 {
-  double diff_coord1 = a.coord1 - b.coord2;
-  double diff_coord2 = a.coord2 - b.coord2;
-  double distance = hypot(diff_coord1, diff_coord2);
-  return distance;
-}
+  coord_xyz a = {2, 4, 8};
+   
+  // different name, same position
+  coord_123* p =  reinterpret_cast<coord_123*>(&a);
+  p->coord1 = 11;
+  p->coord2 = 12;
+  
+  printf("123 plane_xyz { %f, %f, %f } \n", a.x, a.y, a.z);  // 11, 12, 8
 
-double point_distance(plane_xy& a, plane_xy& b)
-{
-  plane_12* ren_a =  (plane_12*)&a;
-  plane_12* ren_b =  (plane_12*)&b;
-  return point_distance(*ren_a, *ren_b);
-}
+  
+  coord_yzx* q = reinterpret_cast<coord_yzx*>(&a);
+  q->coord1 = 21;
+  q->coord2 = 22;
+  printf("yzx plane_xyz { %f, %f, %f } \n", a.x, a.y, a.z);  // 11, 21, 22
 
-//template<typename TO, typename FROM>
-//TO alias_cast
+  coord_zxy* o = reinterpret_cast<coord_zxy*>(&a);
+  o->x = 301;
+  o->y = 302;
+  printf("zxy plane_xyz { %f, %f, %f } \n", a.x, a.y, a.z);  // 302, 21, 301
+
+}
 
 int main()
 {
-  plane_xy a = {0, 0};
-  plane_xy b = {1, 1};
-  
-  double dis = point_distance(a,b);
-  printf("Distance %f \n", dis);
+  access_by_different_name();
 }
+
+
