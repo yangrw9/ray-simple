@@ -3,6 +3,18 @@
 //#include <utility>
 
 /////////////////////////////////////////////////////////////////////////////
+/*
+  四个方案  --三个方案--
+ 
+ o 模板方案（Trait)
+ o 模板方案（function)
+ o 指针方案
+ o 布局同形 方法 （妖怪!)
+ 
+*/
+
+
+/////////////////////////////////////////////////////////////////////////////
 // 0) primary type
 typedef double mtype;
 
@@ -17,6 +29,8 @@ struct plane_xy {
   double x;
   double y;
 };
+//
+/////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
 // Glues for 1 and 2  (basic structure VS basic algorithm)
@@ -40,7 +54,7 @@ struct plane_xy {
 // plane_point_access::coord1(p);  // type inferance
 
 // Style-2 (class template, type parameter)
-// Pros: T is treated as a whole, all assumption must be confirmed.
+// Pros:   ever thought but NOT TRUE:  T is treated as a whole, all assumption must be confirmed.  SINCE: If not use ....
 // Cons: Client has to supply type (C++11 template alias eases)
 //template<typename T>
 //struct plane_point_access{
@@ -88,6 +102,40 @@ struct access_xy{
   static double coord2(const T& p) {return p.y;}
 };
 
+/*
+
+template<typename T>
+struct access_123{
+  static double coord1(const T& p) { return p['1'];}
+  static double coord2(const T& p) {return p['2'];}
+  static double coord3(const T& p) {return p['3'];}
+
+  static double ref_coord1(T& p) {return p['1'];}
+  static double ref_coord2(T& p) {return p['2'];}
+  static double ref_coord3(T& p) {return p['3'];}
+};
+
+template<typename T>
+struct access_xyz{
+  static double coord1(const T& p) {return p['x'];}
+  static double coord2(const T& p) {return p['y'];}
+  static double coord3(const T& p) {return p['z'];}
+
+  static double set_coord1(T& p, double val) {return p['x'] = val;}
+  static double set_coord2(T& p, double val) {return p['y'] = val;}
+  static double set_coord3(T& p, double val) {return p['z'] = val;}
+};
+
+  double p4_coord1 = access::coord1(p1) + radius * cos(alpha);
+  double p4_coord2 = access::coord2(p1) + radius * sin(alpha);
+
+  T p4;
+  access::ref_coord1(p4, p4_coord1);
+  access::set_coord2(p4, p4_coord2);
+  return p4;
+
+*/
+
 //////////////////////////////////////
 // To help type inferance for 2
 // It makes access trait selection automatic.
@@ -110,7 +158,7 @@ struct default_access<plane_xy>
 };
 
 // Style-2 (inplace declare) 
-// Pros:
+// Pros: Good for one time use.
 // Cons: Can't reuse access method.
 //
 // inferance implement (for 'plane_xy')
@@ -166,7 +214,10 @@ double point_distance(const T& point_a, const T& point_b)
 ////  return point_distance<plane_point, plane_point_access>(point_a, point_b);
 ////    return point_distance<plane_point, plane_point_access>(std::forward(point_a), std::forward(point_b));
 //}
+//
+/////////////////////////////////////////////////////////////////////////////
 
+// 
 
 /////////////////////////////////////////////////////////////////////////////
 // 100) sample client code
@@ -206,6 +257,7 @@ void foo_use_ponit_dist()
 // http://www.cppblog.com/youxia/archive/2008/08/30/60443.html
 //   理解模板编程中的Trait和Mataprogram
 //
+
 
 int main()
 {
