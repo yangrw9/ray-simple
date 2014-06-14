@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+a = "target1.html"
+b = "target2.html"
+function f() {
+  return "target2.html"
+}
+
+function g() {
+
+}
+
+</script>
+
+<a href="target1.html"> Go Page </a>
+<p>
+<a href="javascript:a"> Go Page via JavaScript variable (unexpected) </a>
+<p>
+<a href="javascript:f()"> Go Page via JavaScript function (unexpected)</a>
+<p>
+<a href="f()"> Go Page via JavaScript function 2 (unexpected)</a>
+<p>
+<a href="javascript:g()"> Go Page via JavaScript function 3 (how to? )</a>
+<p>
+
+
+<p>
+http://www.w3schools.com/tags/tag_a.asp 
+<p>
+
+<pre>
+The &lt;a&gt; tag defines a hyperlink, which is used to link from one page to another.
+
+a href="URL"
+Possible values:
+
+o An absolute URL - points to another web site (like href="http://www.example.com/default.htm")
+o A relative URL - points to a file within a web site (like href="default.htm")
+o Link to an element with a specified id within the page (like href="#top")
+o Other protocols (like https://, ftp://, mailto:, file:, etc..)
+o A script (like href="javascript:alert('Hello');")
+</pre>
+
+http://stackoverflow.com/questions/4356844/html-javascript-using-a-variable-as-url-for-a-href
+
+</body>
+</html>
