@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+
+<!-- 
+Raymond: About version of web.xml
+ http://stackoverflow.com/questions/15334776/where-i-can-find-valid-values-for-the-version-attribute-of-the-web-app-element-i
+ http://en.wikipedia.org/wiki/Java_Servlet#History
+  3.0, 2.5, 2.4, 2.3, 2.2, 2.1, 2.0, 1.0
+
+For version 2.5
+ http://docs.oracle.com/cd/E13222_01/wls/docs100/webapp/web_xml.html
+  The correct text for the namespace declaration and schema location for the web.xml file is as follows.
+  ....
+ -->
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5" id="WebApp_ID">
   <display-name>learnDynamicMenu</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

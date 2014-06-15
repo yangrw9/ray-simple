@@ -1,9 +1,12 @@
-package com.yar9.learn;
+package com.yar9.learn.fake;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.yar9.learn.model.District;
+import com.yar9.learn.model.Street;
 
 public class StreetService {
 	@SuppressWarnings("serial")

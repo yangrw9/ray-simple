@@ -1,7 +1,9 @@
-package com.yar9.learn;
+package com.yar9.learn.fake;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.yar9.learn.model.District;
 
 public class DistrictService {
 	@SuppressWarnings("serial")

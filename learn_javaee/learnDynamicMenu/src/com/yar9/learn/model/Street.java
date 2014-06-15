@@ -1,4 +1,4 @@
-package com.yar9.learn;
+package com.yar9.learn.model;
 
 public class Street {
 	int 	id;
