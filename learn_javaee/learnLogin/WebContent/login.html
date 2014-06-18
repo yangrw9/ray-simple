@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+
+<!--
+
+<form action="URL">
+URL     Where to send the form-data when the form is submitted.
+        Possible values:
+        An absolute URL - points to another web site (like action="http://www.example.com/example.htm")
+        A relative URL - points to a file within a web site (like action="example.htm")
+        
+<form method="get|post">
+get     Default. Appends the form-data to the URL in name/value pairs: URL?name=value&name=value
+post    Sends the form-data as an HTTP post transaction 
+
+<form enctype="value">
+application/x-www-form-urlencoded   Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)
+multipart/form-data                 No characters are encoded. This value is required when you are using forms that have a file upload control
+text/plain                          Spaces are converted to "+" symbols, but no special characters are encoded
+
+ -->
+ 
+	<form action="login" method="post">
+		Username:<input name="user" /> <br /> 
+		Password:<input name="passwd" type="password" /> <br /> 
+		<input type="submit" />
+	</form>
+	
+
+<!-- 
+http://www.w3schools.com/tags/att_form_method.asp
+
+The form-data can be sent as URL variables (with method="get") or as HTTP post transaction (with method="post").
+
+Notes on GET:
+
+Appends form-data into the URL in name/value pairs
+o The length of a URL is limited (about 3000 characters)
+o Never use GET to send sensitive data! (will be visible in the URL)
+o Useful for form submissions where a user want to bookmark the result
+o GET is better for non-secure data, like query strings in Google
+o Notes on POST:
+
+Appends form-data inside the body of the HTTP request (data is not shown is in URL)
+o Has no size limitations
+o Form submissions with POST cannot be bookmarked
+ 
+-->
+	
+</body>
+</html>

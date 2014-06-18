@@ -1,22 +1,22 @@
 //XMLHttpRequest组件
 var xhs;
 
-function cascade(id){
-    //当id不大于0时，说明当前选择的是“请选择”这一项，则不做操作
+function cascade(id) { // (1b) 函数定义
     if(id>0){
         // Preparing request
-    	//请求字符串,把区域的id作为页面参数传到后台
         var url="cascade?id="+id;
-        xhs=new XMLHttpRequest();
+        xhs=new XMLHttpRequest();  // (2) 【关键】创建 XMLHttpRequest 对象
+        //
         // http://www.w3schools.com/Ajax/ajax_xmlhttprequest_onreadystatechange.asp
         //   The onreadystatechange event is triggered every time the readyState changes.
-        xhs.onreadystatechange=processReuqest;
+        //
+        xhs.onreadystatechange=processReuqest; // (3a) 处理结束后的事件处理函数，
         xhs.open("post", url, true);
         xhs.send(null);
     }
 }
 
-function processReuqest(){
+function processReuqest() {  // (3b) 函数定义
 	// The readyState property holds the status of the XMLHttpRequest.
 	// 
 	//	readyState Holds the status of the XMLHttpRequest. Changes from 0 to 4: 
@@ -32,11 +32,13 @@ function processReuqest(){
 	//
     if(xhs.readyState==4){
         if(xhs.status==200){ 
+        	// (4) 处理返回结果
+        	
         	// Create <select> 
             var newSelect=document.createElement("select");
             newSelect.id="street";
             //为新创建的select节点添加onchange事件，以便测试用
-            newSelect.onchange=function test(){
+            newSelect.onchange=function test(){  // (5) 设定回调
                 alert(this.value);
             };
             // Create <option>

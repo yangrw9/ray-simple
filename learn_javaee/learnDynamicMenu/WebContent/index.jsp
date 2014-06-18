@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<select id="district" onchange="cascade(this.value)">
+	<select id="district" onchange="cascade(this.value)"> <!-- (1a) 关联事件处理函数 ，转 src.js -->
 		<option value="-1">请选择</option>
 		<c:forEach items="${districts }" var="district">
 			<option value="${district.id }">${district.name }</option>
