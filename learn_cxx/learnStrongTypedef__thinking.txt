@@ -1,0 +1,29 @@
+
+作为一个类型，需要回答三个问题：
+
+1. 我是我
+2. 谁是我
+3. 我是谁
+
+struct Turn  //我是我 
+{
+  int value
+  
+  explicit Turn(int v) : value(v) {}            // 谁是我
+  explicit int operator int () {return value;}  // 我是谁
+}
+
+作为 Strong Typedef，我们首先做到，我是我。
+
+一般不期望隐式的发生  “谁是我，我是谁” 。为了打断这恼人的（隐式的） 我是谁， 
+
+C++11 不惜引入了 enum class xxx 语法，
+C++11 不惜引入了 explicit cast operator 语法
+C++03 创造了 explicit 关键字
+
+可以大家欲望之强烈！到处狙击这种事的发生。
+
+
+
+
+
