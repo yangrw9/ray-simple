@@ -1,8 +1,13 @@
+-----------------------------------
 Compile Command:
 
-C:> javac LearnAssignment.java
+$ javac LearnAssignment.java
+
+-----------------------------------
+Run Command: 
+
+$ java LearnAssignment
 
 
-Run Command: (²»ÊÇ java LearnAssignment.class ¹þ£¡)
-
-C:> java LearnAssignment
+(NOT java LearnAssignment.class )
+-----------------------------------
