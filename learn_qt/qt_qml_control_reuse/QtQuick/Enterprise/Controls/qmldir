@@ -1,0 +1,13 @@
+module QtQuick.Enterprise.Controls
+plugin qtquickenterprisecontrolsplugin
+classname QtQuickEnterpriseControlsPlugin
+#typeinfo plugins.qmltypes
+
+CircularGauge 1.0 CircularGauge.qml
+DelayButton 1.0 DelayButton.qml
+Dial 1.0 Dial.qml
+Dial 1.1 Dial.qml
+Gauge 1.0 Gauge.qml
+StatusIndicator 1.1 StatusIndicator.qml
+PieMenu 1.0 PieMenu.qml
+ToggleButton 1.0 ToggleButton.qml

@@ -1,0 +1,86 @@
+MetaInfo {
+    Type {
+        name: "QtQuick.Enterprise.Controls.DelayButton"
+        icon: "images/delaybutton-icon16.png"
+
+        ItemLibraryEntry {
+            name: "DelayButton"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/delaybutton-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+
+            Property {
+                name: "text"
+                type: "binding"
+                value: "qsTr(\"Button\")"
+            }
+        }
+    }
+    Type {
+        name: "QtQuick.Enterprise.Controls.ToggleButton"
+        icon: "images/togglebutton-icon16.png"
+
+        ItemLibraryEntry {
+            name: "ToggleButton"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/togglebutton-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+
+            Property {
+                name: "text"
+                type: "binding"
+                value: "qsTr(\"Button\")"
+            }
+        }
+    }
+    Type {
+        name: "QtQuick.Enterprise.Controls.Gauge"
+        icon: "images/gauge-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Gauge"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/gauge-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+        }
+    }
+    Type {
+        name: "QtQuick.Enterprise.Controls.CircularGauge"
+        icon: "images/circulargauge-icon16.png"
+
+        ItemLibraryEntry {
+            name: "CircularGauge"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/circulargauge-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+        }
+    }
+    Type {
+        name: "QtQuick.Enterprise.Controls.PieMenu"
+        icon: "images/piemenu-icon16.png"
+
+        ItemLibraryEntry {
+            name: "PieMenu"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/piemenu-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+        }
+    }
+    Type {
+        name: "QtQuick.Enterprise.Controls.Dial"
+        icon: "images/dial-icon16.png"
+
+        ItemLibraryEntry {
+            name: "Dial"
+            category: "Qt Quick Enterprise - Controls"
+            libraryIcon: "images/dial-icon.png"
+            version: "1.0"
+            requiredImport: "QtQuick.Enterprise.Controls"
+        }
+    }
+}

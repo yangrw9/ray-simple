@@ -1,0 +1,8 @@
+module QtQuick.Enterprise.Controls.Private
+CircularButton 1.0 CircularButton.qml
+CircularButtonStyleHelper 1.0 CircularButtonStyleHelper.qml
+CircularTickmarkLabel 1.0 CircularTickmarkLabel.qml
+CircularTickmarkLabelStyle 1.0 CircularTickmarkLabelStyle.qml
+TickmarkLabel 1.0 TickmarkLabel.qml
+TickmarkLabelStyle 1.0 TickmarkLabelStyle.qml
+Utils 1.0 Utils.js
