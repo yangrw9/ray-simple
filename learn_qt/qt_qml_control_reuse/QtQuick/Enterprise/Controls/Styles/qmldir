@@ -1,0 +1,10 @@
+module QtQuick.Enterprise.Controls.Styles
+CircularButtonStyle 1.0 CircularButtonStyle.qml
+CircularGaugeStyle 1.0 CircularGaugeStyle.qml
+DelayButtonStyle 1.0 DelayButtonStyle.qml
+DialStyle 1.0 DialStyle.qml
+DialStyle 1.1 DialStyle.qml
+GaugeStyle 1.0 GaugeStyle.qml
+PieMenuStyle 1.0 PieMenuStyle.qml
+StatusIndicatorStyle 1.1 StatusIndicatorStyle.qml
+ToggleButtonStyle 1.0 ToggleButtonStyle.qml
