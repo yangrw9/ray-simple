@@ -56,24 +56,3 @@ void StateWithParam::onEntry(QEvent *event)
     }
     //QState::onEntry(event);   // it's do nothing. arrording source code...
 }
-
-
-class MyTrueSignalTransition : public QSignalTransition
-{
-public:
-    MyTrueSignalTransition(QCheckBox *check) :
-        QSignalTransition(check,SIGNAL(stateChanged(int))){}
-protected:
-    bool eventTest(QEvent *e){
-        if (!QSignalTransition::eventTest(e))
-            return false;
-        QStateMachine::SignalEvent *se = static_cast<QStateMachine::SignalEvent*>(e);
-        return (se->arguments().at(0).toInt() == Qt::Checked);
-    }
-    void onTransition(QEvent * e){
-        QSignalTransition::onTransition(e);
-        QStateMachine::SignalEvent *se = static_cast<QStateMachine::SignalEvent*>(e);
-        int InputState = se->arguments().at(0).toInt();
-        qDebug()<<"Signal argument="<<InputState;
-    }
-};

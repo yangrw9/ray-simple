@@ -4,6 +4,8 @@
 #include "foointerface.h"
 #include <qobject.h>
 
+Q_DECLARE_INTERFACE(FooInterface, "FooInterface")
+
 class FooImpl : public QObject, public FooInterface
 {
     Q_OBJECT

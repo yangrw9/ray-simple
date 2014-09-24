@@ -1,6 +1,6 @@
 #ifndef FOOINTERFACE_H
 #define FOOINTERFACE_H
-#include <qobject.h>
+//#include <qobject.h>
 
 /*
 o. 可以在接口内使用 signals (帖子说 signals 这货其实只是个宏替换……代码也如是）
@@ -19,11 +19,11 @@ class FooInterface
 {
 public:
     virtual ~FooInterface(){}
-signals:
+//signals: // not nessary
     virtual void SomeHappen() = 0;
 };
 
-Q_DECLARE_INTERFACE(FooInterface, "FooInterface")
+//Q_DECLARE_INTERFACE(FooInterface, "FooInterface")
 
 
 #endif // FOOINTERFACE_H
