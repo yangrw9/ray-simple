@@ -1,14 +1,12 @@
 
-此工程涉及了这些 Qt 问题
+主要处理的问题：
 
-o. 如何在 C++ 接口中定义 signal
+1. 在 C++ interface 中定义 signal （或声明一个只有 singal 的 interface）  // foointerface.h
+2. 实现该接口 （包含 signal 的) C++
+3. 仅仅通过接口，进行 singal-slot 绑定
 
-o. 实现 （包含 signal 的) C++接口
-
-o. 绑定接口中的事件
-
-o. 调用、触发 signal
+顺便处理，如何主动 调用、触发 signal
 
 
 Raymond
-2014/7/30
+2014/9/24, 2014/7/30
