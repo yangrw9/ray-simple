@@ -35,7 +35,7 @@ void MainWindow::on_blabla(MyParam param) // (A) if queued (otherwise NOT needed
 
 void MainWindow::ProcessVar(QVariant var)
 {
-    int tid = var.userType();
+    const int tid = var.userType();
 
     const int id = qMetaTypeId<MyParam>();  // (B) otherwise compile error
     const int id2 = qMetaTypeId<My2>();
