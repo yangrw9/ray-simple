@@ -46,13 +46,14 @@ public class Login extends HttpServlet {
 		// 万千烦恼因为不懂这一句 	
 		// 2014/6/18
 		//
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			// no session, create one
-			session = request.getSession(true);	// 打开一个新世界……  
-		} else {
-			// already in session
-		}
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			// no session, create one
+//			session = request.getSession(true);	// 打开一个新世界……  
+//		} else {
+//			// already in session
+//		}
+		HttpSession session = request.getSession(); // did all previous
 		
 		// int a = 1;
 		
